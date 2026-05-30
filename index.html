@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,6 @@
     </script>
 
     <style>
-        /* CSS para simular la carga de "Componentes" */
-        .componente { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .componente.activo { display: block; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         .job-card { transition: all 0.3s; }
         .job-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-left-color: #005580; }
     </style>
@@ -31,13 +24,15 @@
     <nav class="bg-proviceleste text-white fixed w-full z-50 top-0 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 cursor-pointer" onclick="cambiarVista('inicio')">
-                    <img class="h-12 w-auto bg-white p-1 rounded" src="./imagenes/logo.bmp" alt="Logo">
+                <div class="flex-shrink-0">
+                    <a href="#inicio">
+                        <img class="h-12 w-auto bg-white p-1 rounded" src="./imagenes/logo.bmp" alt="Logo Providencia">
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="cambiarVista('inicio')" class="hover:text-blue-200 font-semibold transition">Inicio</button>
-                    <button onclick="cambiarVista('ofertas')" class="hover:text-blue-200 font-semibold transition">Ofertas Laborales</button>
-                    <button onclick="cambiarVista('inscripcion')" class="hover:text-blue-200 font-semibold transition">Inscríbete</button>
+                    <a href="#inicio" class="hover:text-blue-200 font-semibold transition">Inicio</a>
+                    <a href="#ofertas" class="hover:text-blue-200 font-semibold transition">Ofertas Laborales</a>
+                    <a href="#inscripcion" class="hover:text-blue-200 font-semibold transition">Inscríbete</a>
                 </div>
             </div>
         </div>
@@ -45,32 +40,50 @@
 
     <div class="h-20"></div>
 
-    <div id="inicio" class="componente activo">
-        <section class="pt-12 pb-12 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 pr-8">
-                    <span class="text-proviceleste font-bold tracking-wider uppercase text-sm mb-2 block">Departamento de Empleo</span>
-                    <h1 class="text-4xl font-bold text-provioscuro mb-4">Innovando la Búsqueda de Talento en Providencia</h1>
-                    <p class="text-lg text-gray-600 mb-6 text-justify">
-                        Transformamos el modelo tradicional de intermediación laboral hacia una búsqueda inversa. A través de nuestra plataforma, las empresas buscan proactivamente el talento de Providencia, garantizando transparencia y sin discriminación.
-                    </p>
-                    <button onclick="cambiarVista('inscripcion')" class="bg-proviceleste text-white px-8 py-3 rounded shadow hover:bg-provioscuro transition font-bold">
-                        Subir mi Currículum
-                    </button>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0 relative">
-                    <img src="./imagenes/portada.jpg" alt="Portada" class="rounded-lg shadow-xl object-cover w-full h-96">
-                </div>
-            </div>
-        </section>
-        
-        <section class="w-full mt-12 relative">
-            <div class="absolute inset-0 bg-provioscuro opacity-60"></div>
-            <img src="./imagenes/intermedia.png" alt="Intermedia" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <h2 class="text-white text-3xl font-bold text-center px-4">Conectando vecinos con empresas que valoran el talento local.</h2>
-            </div>
-        </section>
-    </div>
+    <section id="inicio" class="pt-10 pb-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            
+            <img src="./imagenes/portada.jpg" alt="Portada" class="w-full h-auto rounded-xl shadow-lg mb-10">
 
-    <div id="ofertas" class="componente py-16 bg-blue-5
+            <div class="text-center w-full">
+                <span class="text-proviceleste font-bold tracking-wider uppercase text-sm mb-2 block">Departamento de Empleo</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-provioscuro mb-6">Innovando la Búsqueda de Talento en Providencia</h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Transformamos el modelo tradicional de intermediación laboral hacia una búsqueda inversa. A través de nuestra plataforma, las empresas buscan proactivamente el talento de Providencia, garantizando transparencia y sin discriminación.
+                </p>
+                <a href="#inscripcion" class="inline-block bg-proviceleste text-white px-8 py-4 rounded shadow-lg hover:bg-provioscuro transition font-bold text-lg">
+                    Subir mi Currículum
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="w-full relative">
+        <div class="absolute inset-0 bg-provioscuro opacity-60"></div>
+        <img src="./imagenes/intermedia.png" alt="Intermedia" class="w-full h-64 md:h-80 object-cover">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-white text-3xl md:text-4xl font-bold text-center px-4 max-w-4xl">Conectando vecinos con empresas que valoran el talento local.</h2>
+        </div>
+    </section>
+
+    <section id="ofertas" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-provioscuro">Portal de Oportunidades</h2>
+                <p class="mt-4 text-gray-600">Revisa las vacantes disponibles exclusivas para vecinos.</p>
+            </div>
+            
+            <div id="loader" class="text-center py-10">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-proviceleste"></div>
+                <p class="mt-4 text-gray-600 font-bold">Cargando ofertas desde el servidor...</p>
+            </div>
+
+            <div id="contenedor-empleos" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <section id="inscripcion" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 md:p-10 rounded-xl shadow-xl border border-gray-100">
+                <h2 class
