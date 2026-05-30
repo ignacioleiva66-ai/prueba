@@ -9,69 +9,68 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: {
-                        proviceleste: '#0099cc',
-                        provioscuro: '#005580',
-                    }
-                }
+                extend: { colors: { proviceleste: '#0099cc', provioscuro: '#005580' } }
             }
         }
     </script>
 
     <style>
-        /* Animación de entrada para los componentes */
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity 0.5s ease, transform 0.5s ease;
+        /* CSS para simular la carga de "Componentes" */
+        .componente { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .componente.activo { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .fade-enter-from, .fade-leave-to {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        /* Efecto hover personalizado para las tarjetas */
-        .job-card {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.05);
-            border-left-color: #005580;
-        }
+        .job-card { transition: all 0.3s; }
+        .job-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-left-color: #005580; }
     </style>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <div id="app">
-        
-        <nav class="bg-proviceleste text-white fixed w-full z-50 top-0 shadow-md transition-all duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-20 items-center">
-                    <div class="flex-shrink-0 cursor-pointer" @click="cambiarVista('inicio')">
-                        <img class="h-12 w-auto bg-white p-1 rounded" src="./imagenes/logo.png" alt="Logo Providencia">
-                    </div>
-                    <div class="hidden md:flex space-x-8">
-                        <button @click="cambiarVista('inicio')" :class="{'border-b-2 border-white': vistaActual === 'inicio'}" class="hover:text-blue-200 font-semibold transition pb-1">Inicio</button>
-                        <button @click="cambiarVista('ofertas')" :class="{'border-b-2 border-white': vistaActual === 'ofertas'}" class="hover:text-blue-200 font-semibold transition pb-1">Ofertas Laborales</button>
-                        <button @click="cambiarVista('inscripcion')" :class="{'border-b-2 border-white': vistaActual === 'inscripcion'}" class="hover:text-blue-200 font-semibold transition pb-1">Inscríbete</button>
-                    </div>
+    <nav class="bg-proviceleste text-white fixed w-full z-50 top-0 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 cursor-pointer" onclick="cambiarVista('inicio')">
+                    <img class="h-12 w-auto bg-white p-1 rounded" src="./imagenes/logo.bmp" alt="Logo">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="cambiarVista('inicio')" class="hover:text-blue-200 font-semibold transition">Inicio</button>
+                    <button onclick="cambiarVista('ofertas')" class="hover:text-blue-200 font-semibold transition">Ofertas Laborales</button>
+                    <button onclick="cambiarVista('inscripcion')" class="hover:text-blue-200 font-semibold transition">Inscríbete</button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="h-20"></div>
+    <div class="h-20"></div>
 
-        <transition name="fade" mode="out-in">
-            
-            <div v-if="vistaActual === 'inicio'" key="inicio">
-                <section class="pt-12 pb-12 bg-white">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 pr-8">
-                            <span class="text-proviceleste font-bold tracking-wider uppercase text-sm mb-2 block">Actor Externo: Departamento de Empleo</span>
-                            <h1 class="text-4xl font-bold text-provioscuro mb-4 leading-tight">Innovando la Búsqueda de Talento en Providencia</h1>
-                            <p class="text-lg text-gray-600 mb-6 text-justify">
-                                Buscamos transformar el modelo tradicional de intermediación laboral hacia una búsqueda inversa. A través de nuestra nueva plataforma, las empresas buscan proactivamente el talento de Providencia, garantizando transparencia y eliminando la discriminación arbitraria.
-                            </p>
-                            <button @click="cambiar
+    <div id="inicio" class="componente activo">
+        <section class="pt-12 pb-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 pr-8">
+                    <span class="text-proviceleste font-bold tracking-wider uppercase text-sm mb-2 block">Departamento de Empleo</span>
+                    <h1 class="text-4xl font-bold text-provioscuro mb-4">Innovando la Búsqueda de Talento en Providencia</h1>
+                    <p class="text-lg text-gray-600 mb-6 text-justify">
+                        Transformamos el modelo tradicional de intermediación laboral hacia una búsqueda inversa. A través de nuestra plataforma, las empresas buscan proactivamente el talento de Providencia, garantizando transparencia y sin discriminación.
+                    </p>
+                    <button onclick="cambiarVista('inscripcion')" class="bg-proviceleste text-white px-8 py-3 rounded shadow hover:bg-provioscuro transition font-bold">
+                        Subir mi Currículum
+                    </button>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 relative">
+                    <img src="./imagenes/portada.jpg" alt="Portada" class="rounded-lg shadow-xl object-cover w-full h-96">
+                </div>
+            </div>
+        </section>
+        
+        <section class="w-full mt-12 relative">
+            <div class="absolute inset-0 bg-provioscuro opacity-60"></div>
+            <img src="./imagenes/intermedia.png" alt="Intermedia" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h2 class="text-white text-3xl font-bold text-center px-4">Conectando vecinos con empresas que valoran el talento local.</h2>
+            </div>
+        </section>
+    </div>
+
+    <div id="ofertas" class="componente py-16 bg-blue-5
