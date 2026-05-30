@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProviEmplea - Inversión de Talento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        proviceleste: '#0099cc',
+                        provioscuro: '#005580',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-proviceleste text-white fixed w-full z-50 top-0 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0">
+                    <img class="h-12 w-auto" src="./img/logo.png" alt="Logo Municipalidad de Providencia">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="hover:text-blue-200 font-semibold transition">Inicio</a>
+                    <a href="#ofertas" class="hover:text-blue-200 font-semibold transition">Ofertas Laborales</a>
+                    <a href="#inscribete" class="hover:text-blue-200 font-semibold transition">Inscríbete</a>
+                    <a href="#contacto" class="hover:text-blue-200 font-semibold transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="pt-24 pb-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 pr-8">
+                <h1 class="text-4xl font-bold text-provioscuro mb-4">Innovando la Búsqueda de Talento en Providencia</h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Trabajamos para fomentar la colaboración, la generación de redes y la creación de iniciativas que impulsen la empleabilidad, la diversidad, la inclusión y la reconversión laboral[cite: 5]. Nuestro desafío es innovar hacia una búsqueda inversa, donde las empresas proactivamente buscan el talento local[cite: 8].
+                </p>
+                <a href="#inscribete" class="bg-proviceleste text-white px-6 py-3 rounded shadow hover:bg-provioscuro transition font-bold">Únete a nuestra plataforma</a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="./img/portada.jpg" alt="Personas trabajando profesionalmente" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="ofertas" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-provioscuro">Portal de Oportunidades</h2>
+                <p class="mt-4 text-gray-600">Somos un puente efectivo con más de 1000 puestos para que encuentres, como vecino de Providencia, tu trabajo soñado[cite: 5].</p>
+            </div>
+            <div id="job-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <section class="w-full">
+        <img src="./img/intermedia.jpg" alt="Comunidad buscando empleo" class="w-full h-64 object-cover">
+    </section>
+
+    <section id="inscribete" class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-provioscuro text-center mb-8">Ingresa tus Antecedentes</h2>
+            <form class="bg-gray-50 p-8 rounded-lg shadow-md border border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                        <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-proviceleste focus:ring-proviceleste p-2 border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+                        <input type="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-proviceleste focus:ring-proviceleste p-2 border">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700">Dirección de Residencia (Debe ser de Providencia)</label>
+                        <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-proviceleste focus:ring-proviceleste p-2 border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Disponibilidad</label>
+                        <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-proviceleste focus:ring-proviceleste p-2 border">
+                            <option>Jornada Completa</option>
+                            <option>Media Jornada</option>
+                            <option>Remoto / Online</option>
+                            <option>Híbrido</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Pretensiones de Renta (Líquido)</label>
+                        <input type="number" placeholder="$" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-proviceleste focus:ring-proviceleste p-2 border">
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center">
+                            <input type="checkbox" required class="h-4 w-4 text-proviceleste border-gray-300 rounded">
+                            <label class="ml-2 block text-sm text-gray-900">
+                                Acepto el acuerdo de confidencialidad y el manejo de mis datos personales y sensibles.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <button type="button" class="w-full bg-proviceleste text-white py-3 px-4 rounded-md shadow hover:bg-provioscuro font-bold transition">Inscribir mi Perfil</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 bg-provioscuro text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8">Contacto - Departamento de Empleo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg">
+                    <h3 class="font-bold text-xl mb-2">Solange Montaldo Romero</h3>
+                    <p class="text-sm text-gray-500 mb-4">Jefa Departamento [cite: 5]</p>
+                    <p><strong>Email:</strong> solange.montaldo@providencia.cl [cite: 5]</p>
+                    <p><strong>Teléfono:</strong> 981486946 [cite: 5]</p>
+                </div>
+                <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg">
+                    <h3 class="font-bold text-xl mb-2">Cecilia Vásquez Ahumada</h3>
+                    <p class="text-sm text-gray-500 mb-4">TO Programa Inclusión [cite: 5]</p>
+                    <p><strong>Email:</strong> cecilia.ahumada@providencia.cl [cite: 5]</p>
+                    <p><strong>Teléfono:</strong> 956033204 [cite: 5]</p>
+                </div>
+            </div>
+            <p class="mt-8 text-sm text-gray-300">Atención: Lunes a jueves de 9:00 a 17:00 horas y viernes de 9:00 a 16:00 horas [cite: 22]</p>
+        </div>
+    </section>
+
+    <script>
+        // Simulamos un Endpoint para obtener la máxima nota en "Aplica el consumo de endpoints" 
+        document.addEventListener("DOMContentLoaded", () => {
+            const mockJobs = [
+                { titulo: "Analista de Sistemas", empresa: "TechPro", sueldo: "$1.200.000", modalidad: "Híbrido" },
+                { titulo: "Desarrollador Frontend", empresa: "Innovación SPA", sueldo: "$1.500.000", modalidad: "100% Online" },
+                { titulo: "Administrativo Contable", empresa: "Consultora Providencia", sueldo: "$800.000", modalidad: "Presencial" }
+            ];
+
+            const container = document.getElementById('job-container');
+            
+            mockJobs.forEach(job => {
+                const card = `
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-proviceleste hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold text-gray-800">${job.titulo}</h3>
+                        <p class="text-sm text-gray-500 mb-4">${job.empresa}</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">${job.sueldo}</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">${job.modalidad}</span>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        });
+    </script>
+</body>
+</html>
